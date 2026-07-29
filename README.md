@@ -1,1 +1,308 @@
 # KaranKishor.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Kishor | Video Editor & Content Creator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+        :root {
+            --bg-color: #050505;
+            --surface-color: #121212;
+            --primary: #7000FF; /* Deep Purple */
+            --secondary: #00F0FF; /* Cyan */
+            --text-main: #FFFFFF;
+            --text-muted: #A0A0A0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0b2e 0%, var(--bg-color) 70%);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .contact-info a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(112, 0, 255, 0.5);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 5rem;
+        }
+
+        .skill-badge {
+            padding: 12px 25px;
+            background: var(--surface-color);
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--secondary);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Experience Grid */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .exp-card {
+            background: var(--surface-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .exp-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .exp-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .exp-desc {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        /* Education */
+        .edu-section {
+            margin-top: 5rem;
+            background: var(--surface-color);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #000;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .exp-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1>Karan Kishor</h1>
+            <h2>Video Editor & AI Content Specialist</h2>
+            <div class="contact-info">
+                <a href="mailto:kld6803@gmail.com">kld6803@gmail.com</a>
+                <a href="tel:+919817871409">+91-9817871409</a>
+                <a href="#">Srinagar, J&K</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Core Skills</h2>
+        <div class="skills-wrapper">
+            <div class="skill-badge">Adobe Premiere Pro</div>
+            <div class="skill-badge">DaVinci Resolve</div>
+            <div class="skill-badge">AI Video Tools (Gemini, Kling)</div>
+            <div class="skill-badge">Graphic Design & Canva</div>
+            <div class="skill-badge">Digital Marketing</div>
+            <div class="skill-badge">Storytelling & Transitions</div>
+        </div>
+
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-grid">
+            
+            <div class="exp-card">
+                <span class="exp-date">Jun 2026 - Sep 2026</span>
+                <h3 class="exp-title">Reel Editor & Thumbnail Designer</h3>
+                <div class="exp-company">Dietitian Content (Freelance)</div>
+                <p class="exp-desc">Engineered high-quality short-form content. Leveraged Premiere Pro, DaVinci Resolve, and advanced AI platforms to streamline creation and maintain a consistent visual identity.</p>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">May 2026 - Aug 2026</span>
+                <h3 class="exp-title">AI Video Creator</h3>
+                <div class="exp-company">Independent Projects</div>
+                <p class="exp-desc">Produced cinematic, visually polished YouTube and social media content utilizing Google Gemini Flow, Kling AI, and traditional editing suites.</p>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">Feb 2026 - Feb 2026</span>
+                <h3 class="exp-title">Video Editor</h3>
+                <div class="exp-company">EyeConic By Dr. Lalla</div>
+                <p class="exp-desc">Enhanced raw footage into high-quality reels with dynamic transitions and impactful sound design tailored to specific brand trends.</p>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">Feb 2025 - Oct 2025</span>
+                <h3 class="exp-title">Content Creator</h3>
+                <div class="exp-company">Bling Digitals</div>
+                <p class="exp-desc">Collaborated with the founding team to create trend-driven video content for multiple platforms, ensuring timely and creative project delivery.</p>
+            </div>
+
+            <div class="exp-card">
+                <span class="exp-date">Aug 2024 - Jun 2026</span>
+                <h3 class="exp-title">Video Editor</h3>
+                <div class="exp-company">Strategix</div>
+                <p class="exp-desc">Edited client clips into engaging videos with graphics, overlays, and bespoke background music. Designed highly clickable YouTube thumbnails.</p>
+            </div>
+
+        </div>
+
+        <div class="edu-section">
+            <h2 class="section-title" style="margin-bottom: 1rem; text-align: center;">Education</h2>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">B.Sc (Horticulture)</h3>
+            <p style="color: var(--text-muted);">Sher-E-Kashmir University of Agriculture Science and Technology, Srinagar</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Karan Kishor. Crafted with code and creativity.</p>
+    </footer>
+
+</body>
+</html>
